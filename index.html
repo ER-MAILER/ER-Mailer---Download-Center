@@ -135,33 +135,6 @@
             background-color: #c0392b;
         }
         
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            min-width: 150px;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #777;
-        }
-        
         footer {
             background-color: var(--dark-color);
             color: white;
@@ -174,11 +147,6 @@
             .version-cards {
                 flex-direction: column;
                 align-items: center;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
@@ -216,21 +184,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="passwordDownloads">0</div>
-                    <div class="stat-label">App Pass Version Downloads</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="apiDownloads">0</div>
-                    <div class="stat-label">API Version Downloads</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="totalDownloads">0</div>
-                    <div class="stat-label">Total Downloads</div>
-                </div>
-            </div>
         </section>
     </main>
     
@@ -244,42 +197,16 @@
         // Simulated database (in a real app, this would be server-side)
         const db = {
             passwordVersion: {
-                downloads: 0,
                 version: "1.2",
                 file: "https://drive.usercontent.google.com/download?id=1fH2WbLkSrIhr80WfgbUgGrLV5CwX7KHF&export=download&authuser=0",
                 password: "25052025"
             },
             apiVersion: {
-                downloads: 0,
                 version: "5.1.1",
                 file: "https://drive.usercontent.google.com/download?id=1OLMXoZHZga8mmryvqrNjQDT5snC9dr2C&export=download&authuser=0",
                 password: "15062025"
             }
         };
-
-        // Load download counts from localStorage or initialize
-        function loadCounts() {
-            const savedData = localStorage.getItem('erMailerDownloads');
-            if (savedData) {
-                const data = JSON.parse(savedData);
-                db.passwordVersion.downloads = data.passwordVersion.downloads || 0;
-                db.apiVersion.downloads = data.apiVersion.downloads || 0;
-            }
-            updateDisplay();
-        }
-
-        // Save download counts to localStorage
-        function saveCounts() {
-            localStorage.setItem('erMailerDownloads', JSON.stringify(db));
-            updateDisplay();
-        }
-
-        // Update the display with current counts
-        function updateDisplay() {
-            document.getElementById('passwordDownloads').textContent = db.passwordVersion.downloads;
-            document.getElementById('apiDownloads').textContent = db.apiVersion.downloads;
-            document.getElementById('totalDownloads').textContent = db.passwordVersion.downloads + db.apiVersion.downloads;
-        }
 
         // Force download without opening new tab
         function triggerDownload(filename) {
@@ -293,43 +220,12 @@
 
         // Download button handlers
         document.getElementById('downloadPassword').addEventListener('click', function() {
-            db.passwordVersion.downloads++;
-            saveCounts();
             triggerDownload(db.passwordVersion.file);
         });
         
         document.getElementById('downloadApi').addEventListener('click', function() {
-            db.apiVersion.downloads++;
-            saveCounts();
             triggerDownload(db.apiVersion.file);
         });
-
-        // Initialize on page load
-        window.addEventListener('load', function() {
-            loadCounts();
-            
-            // Animate the numbers
-            ['passwordDownloads', 'apiDownloads', 'totalDownloads'].forEach(id => {
-                const element = document.getElementById(id);
-                const target = parseInt(element.textContent);
-                animateValue(id, 0, target, 1000);
-            });
-        });
-
-        // Animation function for counters
-        function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.textContent = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
     </script>
 </body>
 </html>
