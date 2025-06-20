@@ -111,6 +111,29 @@
             color: var(--primary);
         }
         
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--dark));
@@ -339,6 +362,11 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -361,6 +389,57 @@
         .form-group textarea {
             height: 150px;
             resize: vertical;
+        }
+        
+        /* Team Section */
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--secondary);
+        }
+        
+        .team-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .team-card p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .team-social a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .team-social a:hover {
+            color: var(--secondary);
         }
         
         /* Footer */
@@ -535,7 +614,7 @@
                         <li>5 Email Templates</li>
                         <li>API Access</li>
                     </ul>
-                    <a href="#" class="btn">Get Started</a>
+                    <a href="#download" class="btn">Get Started</a>
                 </div>
                 <div class="pricing-card popular">
                     <div class="popular-tag">Most Popular</div>
@@ -549,7 +628,7 @@
                         <li>API Access</li>
                         <li>A/B Testing</li>
                     </ul>
-                    <a href="#" class="btn">Get Started</a>
+                    <a href="#download" class="btn">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
@@ -563,7 +642,7 @@
                         <li>A/B Testing</li>
                         <li>Dedicated Account Manager</li>
                     </ul>
-                    <a href="#" class="btn">Get Started</a>
+                    <a href="#download" class="btn">Get Started</a>
                 </div>
             </div>
         </div>
@@ -671,6 +750,41 @@
                 </div>
                 <button type="submit" class="btn" style="width: 100%;">Send Message</button>
             </form>
+            
+            <div class="contact-info">
+                <h3>Or reach us directly via WhatsApp</h3>
+                <a href="https://wa.me/8801795541326" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> +880 1795541326
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>The people behind ER Mailer</p>
+            </div>
+            <div class="team-members">
+                <div class="team-card">
+                    <img src="https://scontent.fcgp37-1.fna.fbcdn.net/v/t39.30808-1/481460403_663901362867960_8496293896155066956_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeEHL36O7hERse4FrIvP9ksODHCqaPgkC7oMcKpo-CQLupicTsd3SdUpMoQM-V0FLSDvRE2QuL_w6sZBIhbAunqz&_nc_ohc=ZKaDGN69C50Q7kNvwGkd37H&_nc_oc=Adk7ZMyj4ZS4AMpYzIVxxLmqeoPYMh3MAP7nVrrBnnum152SWf-ekURoe1aKCmzu1go&_nc_zt=24&_nc_ht=scontent.fcgp37-1.fna&_nc_gid=_Ke7p5mDmZaRaPhKzKTS3A&oh=00_AfNUszzdQsA5AP4ovYjq7Otl54-VML4c3FYZvQQQYdlxAA&oe=685AE3D3" alt="Company Owner" class="team-avatar">
+                    <h3>ER Mailer</h3>
+                    <p>Company Owner</p>
+                    <div class="team-social">
+                        <a href="https://www.facebook.com/er.mailer.software" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://scontent.fcgp37-1.fna.fbcdn.net/v/t39.30808-1/467979909_1734816697318011_4691537354767884361_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHJyg5gNQdQYzAox7jS-CVX20g4lvUpPbTbSDiW9Sk9tF3r1DuudYkZ1CYRqkOQ7lJmN8uoRP6hnvsaDWNfNdqp&_nc_ohc=57AK6R1_ZWoQ7kNvwEI7Xu-&_nc_oc=Adlw2ic3sgA4DnsE_EOty_kVrawzKjYOtVXnBAv8JX0N1Iwa4d4rZsrggBJ-P1rEZ-k&_nc_zt=24&_nc_ht=scontent.fcgp37-1.fna&_nc_gid=8mCgLjkzSU1EtWQ1crSkjg&oh=00_AfNnUu185CVZpp3qL0N2rL-p0I-ZAXPmJKI5nv71PRE04w&oe=685AE31F" alt="Developer" class="team-avatar">
+                    <h3>Shahriar Shakil Nobab</h3>
+                    <p>Senior Software Developer</p>
+                    <div class="team-social">
+                        <a href="https://www.facebook.com/shahriar.shakil.nobab" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -682,7 +796,7 @@
                     <h3>ER Mailer</h3>
                     <p>Professional email marketing software for businesses of all sizes.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/er.mailer.software" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
