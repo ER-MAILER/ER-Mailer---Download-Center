@@ -263,6 +263,77 @@
             border-bottom: 1px solid #eee;
         }
         
+        /* Payment Methods */
+        .payment-methods {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .payment-methods.active {
+            display: block;
+        }
+        
+        .payment-method {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            background-color: #e9ecef;
+        }
+        
+        .payment-method h4 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .payment-method h4 i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .payment-details {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: white;
+            border-radius: 4px;
+        }
+        
+        .payment-details.active {
+            display: block;
+        }
+        
+        .payment-address {
+            font-family: monospace;
+            word-break: break-all;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 0.5rem auto;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+        }
+        
         /* Download Section */
         .download {
             text-align: center;
@@ -510,6 +581,14 @@
             .nav-links {
                 display: none;
             }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .version-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -614,8 +693,56 @@
                         <li>5 Email Templates</li>
                         <li>API Access</li>
                     </ul>
-                    <a href="#download" class="btn">Get Started</a>
+                    <button class="btn payment-btn">Get Started</button>
+                    
+                    <div class="payment-methods" id="starter-payment">
+                        <div class="payment-method" onclick="togglePaymentDetails('starter-binance')">
+                            <h4><i class="fab fa-bitcoin"></i> Binance</h4>
+                            <div class="payment-details" id="starter-binance">
+                                <p>Send payment to Binance ID:</p>
+                                <div class="payment-address">587230496</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
+                                </div>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('starter-btc')">
+                            <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
+                            <div class="payment-details" id="starter-btc">
+                                <p>Send BTC to this address:</p>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('starter-eth')">
+                            <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
+                            <div class="payment-details" id="starter-eth">
+                                <p>Send ETH to this address (ERC20):</p>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('starter-usdt')">
+                            <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
+                            <div class="payment-details" id="starter-usdt">
+                                <p>Send USDT to this address (TRC20):</p>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="pricing-card popular">
                     <div class="popular-tag">Most Popular</div>
                     <h3>Professional</h3>
@@ -628,8 +755,56 @@
                         <li>API Access</li>
                         <li>A/B Testing</li>
                     </ul>
-                    <a href="#download" class="btn">Get Started</a>
+                    <button class="btn payment-btn">Get Started</button>
+                    
+                    <div class="payment-methods" id="professional-payment">
+                        <div class="payment-method" onclick="togglePaymentDetails('professional-binance')">
+                            <h4><i class="fab fa-bitcoin"></i> Binance</h4>
+                            <div class="payment-details" id="professional-binance">
+                                <p>Send payment to Binance ID:</p>
+                                <div class="payment-address">587230496</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
+                                </div>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('professional-btc')">
+                            <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
+                            <div class="payment-details" id="professional-btc">
+                                <p>Send BTC to this address:</p>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('professional-eth')">
+                            <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
+                            <div class="payment-details" id="professional-eth">
+                                <p>Send ETH to this address (ERC20):</p>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('professional-usdt')">
+                            <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
+                            <div class="payment-details" id="professional-usdt">
+                                <p>Send USDT to this address (TRC20):</p>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="price">$90<span>/month</span></div>
@@ -642,7 +817,54 @@
                         <li>A/B Testing</li>
                         <li>Dedicated Account Manager</li>
                     </ul>
-                    <a href="#download" class="btn">Get Started</a>
+                    <button class="btn payment-btn">Get Started</button>
+                    
+                    <div class="payment-methods" id="enterprise-payment">
+                        <div class="payment-method" onclick="togglePaymentDetails('enterprise-binance')">
+                            <h4><i class="fab fa-bitcoin"></i> Binance</h4>
+                            <div class="payment-details" id="enterprise-binance">
+                                <p>Send payment to Binance ID:</p>
+                                <div class="payment-address">587230496</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
+                                </div>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('enterprise-btc')">
+                            <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
+                            <div class="payment-details" id="enterprise-btc">
+                                <p>Send BTC to this address:</p>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('enterprise-eth')">
+                            <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
+                            <div class="payment-details" id="enterprise-eth">
+                                <p>Send ETH to this address (ERC20):</p>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-method" onclick="togglePaymentDetails('enterprise-usdt')">
+                            <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
+                            <div class="payment-details" id="enterprise-usdt">
+                                <p>Send USDT to this address (TRC20):</p>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -869,6 +1091,35 @@
         document.getElementById('downloadApi').addEventListener('click', function() {
             triggerDownload(db.apiVersion.file);
         });
+
+        // Payment methods toggle
+        document.querySelectorAll('.payment-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const paymentMethods = this.nextElementSibling;
+                paymentMethods.classList.toggle('active');
+                
+                // Close other payment methods
+                document.querySelectorAll('.payment-methods').forEach(methods => {
+                    if (methods !== paymentMethods) {
+                        methods.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Toggle payment details
+        function togglePaymentDetails(id) {
+            const details = document.getElementById(id);
+            details.classList.toggle('active');
+            
+            // Close other payment details in the same section
+            const parent = details.closest('.payment-methods');
+            parent.querySelectorAll('.payment-details').forEach(d => {
+                if (d !== details) {
+                    d.classList.remove('active');
+                }
+            });
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
