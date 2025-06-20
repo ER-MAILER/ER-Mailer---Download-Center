@@ -334,40 +334,6 @@
             height: 100%;
         }
         
-        /* Deep Link Styles */
-        .deep-link-btn {
-            display: inline-block;
-            margin-top: 0.5rem;
-            padding: 8px 15px;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        
-        .deep-link-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .app-not-installed {
-            font-size: 0.8rem;
-            color: #777;
-            margin-top: 0.5rem;
-            display: none;
-        }
-        
-        .copy-btn {
-            display: inline-block;
-            margin-left: 0.5rem;
-            padding: 2px 8px;
-            background-color: #f1f1f1;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            cursor: pointer;
-        }
-        
         /* Download Section */
         .download {
             text-align: center;
@@ -734,13 +700,11 @@
                             <h4><i class="fab fa-bitcoin"></i> Binance</h4>
                             <div class="payment-details" id="starter-binance">
                                 <p>Send payment to Binance ID:</p>
-                                <div class="payment-address">587230496 <span class="copy-btn" onclick="copyToClipboard('587230496', this)">Copy</span></div>
+                                <div class="payment-address">587230496</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
                                 </div>
-                                <a href="binance://" class="deep-link-btn" id="binance-app">Open Binance App</a>
-                                <a href="https://www.binance.com/en" class="deep-link-btn" id="binance-web" style="display:none;">Pay with Binance</a>
-                                <p class="app-not-installed" id="binance-not-installed">App not installed? <a href="https://www.binance.com/en" target="_blank">Use Web Version</a></p>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
                             </div>
                         </div>
                         
@@ -748,12 +712,10 @@
                             <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
                             <div class="payment-details" id="starter-btc">
                                 <p>Send BTC to this address:</p>
-                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R <span class="copy-btn" onclick="copyToClipboard('1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R', this)">Copy</span></div>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
                                 </div>
-                                <a href="bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" class="deep-link-btn" id="btc-app">Open Wallet</a>
-                                <p class="app-not-installed" id="btc-not-installed">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -761,12 +723,10 @@
                             <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
                             <div class="payment-details" id="starter-eth">
                                 <p>Send ETH to this address (ERC20):</p>
-                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0 <span class="copy-btn" onclick="copyToClipboard('0xb0de11ffd6f683c774c6e9be89365037855f73d0', this)">Copy</span></div>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
                                 </div>
-                                <a href="ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" class="deep-link-btn" id="eth-app">Open Wallet</a>
-                                <p class="app-not-installed" id="eth-not-installed">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -774,11 +734,10 @@
                             <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
                             <div class="payment-details" id="starter-usdt">
                                 <p>Send USDT to this address (TRC20):</p>
-                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr <span class="copy-btn" onclick="copyToClipboard('TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr', this)">Copy</span></div>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
                                 </div>
-                                <a href="https://tronscan.org/#/address/TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" class="deep-link-btn" id="usdt-app">View on Tronscan</a>
                             </div>
                         </div>
                     </div>
@@ -803,13 +762,11 @@
                             <h4><i class="fab fa-bitcoin"></i> Binance</h4>
                             <div class="payment-details" id="professional-binance">
                                 <p>Send payment to Binance ID:</p>
-                                <div class="payment-address">587230496 <span class="copy-btn" onclick="copyToClipboard('587230496', this)">Copy</span></div>
+                                <div class="payment-address">587230496</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
                                 </div>
-                                <a href="binance://" class="deep-link-btn" id="binance-app-pro">Open Binance App</a>
-                                <a href="https://www.binance.com/en" class="deep-link-btn" id="binance-web-pro" style="display:none;">Pay with Binance</a>
-                                <p class="app-not-installed" id="binance-not-installed-pro">App not installed? <a href="https://www.binance.com/en" target="_blank">Use Web Version</a></p>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
                             </div>
                         </div>
                         
@@ -817,12 +774,10 @@
                             <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
                             <div class="payment-details" id="professional-btc">
                                 <p>Send BTC to this address:</p>
-                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R <span class="copy-btn" onclick="copyToClipboard('1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R', this)">Copy</span></div>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
                                 </div>
-                                <a href="bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" class="deep-link-btn" id="btc-app-pro">Open Wallet</a>
-                                <p class="app-not-installed" id="btc-not-installed-pro">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -830,12 +785,10 @@
                             <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
                             <div class="payment-details" id="professional-eth">
                                 <p>Send ETH to this address (ERC20):</p>
-                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0 <span class="copy-btn" onclick="copyToClipboard('0xb0de11ffd6f683c774c6e9be89365037855f73d0', this)">Copy</span></div>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
                                 </div>
-                                <a href="ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" class="deep-link-btn" id="eth-app-pro">Open Wallet</a>
-                                <p class="app-not-installed" id="eth-not-installed-pro">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -843,11 +796,10 @@
                             <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
                             <div class="payment-details" id="professional-usdt">
                                 <p>Send USDT to this address (TRC20):</p>
-                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr <span class="copy-btn" onclick="copyToClipboard('TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr', this)">Copy</span></div>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
                                 </div>
-                                <a href="https://tronscan.org/#/address/TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" class="deep-link-btn" id="usdt-app-pro">View on Tronscan</a>
                             </div>
                         </div>
                     </div>
@@ -872,13 +824,11 @@
                             <h4><i class="fab fa-bitcoin"></i> Binance</h4>
                             <div class="payment-details" id="enterprise-binance">
                                 <p>Send payment to Binance ID:</p>
-                                <div class="payment-address">587230496 <span class="copy-btn" onclick="copyToClipboard('587230496', this)">Copy</span></div>
+                                <div class="payment-address">587230496</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BinanceID:587230496" alt="Binance QR Code">
                                 </div>
-                                <a href="binance://" class="deep-link-btn" id="binance-app-ent">Open Binance App</a>
-                                <a href="https://www.binance.com/en" class="deep-link-btn" id="binance-web-ent" style="display:none;">Pay with Binance</a>
-                                <p class="app-not-installed" id="binance-not-installed-ent">App not installed? <a href="https://www.binance.com/en" target="_blank">Use Web Version</a></p>
+                                <a href="https://www.binance.com/en" target="_blank" class="btn" style="margin-top: 0.5rem; display: block;">Pay with Binance</a>
                             </div>
                         </div>
                         
@@ -886,12 +836,10 @@
                             <h4><i class="fab fa-bitcoin"></i> Bitcoin</h4>
                             <div class="payment-details" id="enterprise-btc">
                                 <p>Send BTC to this address:</p>
-                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R <span class="copy-btn" onclick="copyToClipboard('1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R', this)">Copy</span></div>
+                                <div class="payment-address">1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" alt="Bitcoin QR Code">
                                 </div>
-                                <a href="bitcoin:1PWT1Smd2StdCTwm6p66QdbPpwHzpgF49R" class="deep-link-btn" id="btc-app-ent">Open Wallet</a>
-                                <p class="app-not-installed" id="btc-not-installed-ent">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -899,12 +847,10 @@
                             <h4><i class="fab fa-ethereum"></i> Ethereum</h4>
                             <div class="payment-details" id="enterprise-eth">
                                 <p>Send ETH to this address (ERC20):</p>
-                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0 <span class="copy-btn" onclick="copyToClipboard('0xb0de11ffd6f683c774c6e9be89365037855f73d0', this)">Copy</span></div>
+                                <div class="payment-address">0xb0de11ffd6f683c774c6e9be89365037855f73d0</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" alt="Ethereum QR Code">
                                 </div>
-                                <a href="ethereum:0xb0de11ffd6f683c774c6e9be89365037855f73d0" class="deep-link-btn" id="eth-app-ent">Open Wallet</a>
-                                <p class="app-not-installed" id="eth-not-installed-ent">Wallet app not installed? Copy address manually</p>
                             </div>
                         </div>
                         
@@ -912,11 +858,10 @@
                             <h4><i class="fas fa-coins"></i> USDT (TRC20)</h4>
                             <div class="payment-details" id="enterprise-usdt">
                                 <p>Send USDT to this address (TRC20):</p>
-                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr <span class="copy-btn" onclick="copyToClipboard('TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr', this)">Copy</span></div>
+                                <div class="payment-address">TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr</div>
                                 <div class="qr-code">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRC20:TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" alt="USDT QR Code">
                                 </div>
-                                <a href="https://tronscan.org/#/address/TBUxWi9vCaXiNoAxgEtJRnH67C2oieYHjr" class="deep-link-btn" id="usdt-app-ent">View on Tronscan</a>
                             </div>
                         </div>
                     </div>
@@ -1175,98 +1120,6 @@
                 }
             });
         }
-
-        // Copy to clipboard function
-        function copyToClipboard(text, element) {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = element.textContent;
-                element.textContent = 'Copied!';
-                setTimeout(() => {
-                    element.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-
-        // Check if apps are installed and handle deep links
-        function setupDeepLinks() {
-            // Binance deep links
-            setupAppDeepLink(
-                'binance-app', 
-                'binance-web', 
-                'binance-not-installed',
-                'binance://',
-                'https://www.binance.com/en'
-            );
-            
-            // Setup for all plans
-            ['', '-pro', '-ent'].forEach(suffix => {
-                setupAppDeepLink(
-                    `binance-app${suffix}`, 
-                    `binance-web${suffix}`, 
-                    `binance-not-installed${suffix}`,
-                    'binance://',
-                    'https://www.binance.com/en'
-                );
-            });
-        }
-
-        function setupAppDeepLink(appId, webId, notInstalledId, appUri, webUri) {
-            const appLink = document.getElementById(appId);
-            const webLink = document.getElementById(webId);
-            const notInstalledMsg = document.getElementById(notInstalledId);
-            
-            if (appLink && webLink && notInstalledMsg) {
-                // Test if app is installed
-                const testLink = document.createElement('a');
-                testLink.href = appUri;
-                testLink.style.display = 'none';
-                document.body.appendChild(testLink);
-                
-                setTimeout(() => {
-                    if (document.hidden) {
-                        // App is installed, it will handle the link
-                        appLink.style.display = 'block';
-                        webLink.style.display = 'none';
-                        notInstalledMsg.style.display = 'none';
-                    } else {
-                        // App is not installed, show web alternative
-                        appLink.style.display = 'none';
-                        webLink.style.display = 'block';
-                        notInstalledMsg.style.display = 'block';
-                    }
-                    document.body.removeChild(testLink);
-                }, 25);
-                
-                // Handle click for app link
-                appLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.location.href = appUri;
-                    setTimeout(() => {
-                        if (!document.hidden) {
-                            window.location.href = webUri;
-                        }
-                    }, 500);
-                });
-            }
-        }
-
-        // Initialize deep links when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            setupDeepLinks();
-            
-            // Setup Bitcoin and Ethereum links (no fallback needed)
-            ['btc-app', 'btc-app-pro', 'btc-app-ent', 'eth-app', 'eth-app-pro', 'eth-app-ent'].forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        window.location.href = this.href;
-                    });
-                }
-            });
-        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
