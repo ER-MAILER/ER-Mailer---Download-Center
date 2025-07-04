@@ -388,6 +388,11 @@
         .version-options {
             margin-top: 1rem;
             text-align: left;
+            display: none;
+        }
+        
+        .version-options.active {
+            display: block;
         }
         
         .version-option {
@@ -424,6 +429,23 @@
         
         .download-old-btn:hover {
             background-color: var(--dark);
+        }
+        
+        .toggle-versions {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 5px 0;
+        }
+        
+        .toggle-versions:hover {
+            text-decoration: underline;
         }
         
         /* Testimonials */
@@ -652,7 +674,7 @@
                     <li><a href="#download">Download</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <a href="#download" class="btn btn-outline">Get Started</a>
+                <a href="#pricing" class="btn btn-outline">Get Started</a>
             </nav>
         </div>
     </header>
@@ -663,7 +685,7 @@
             <h1>Powerful Email Marketing Software</h1>
             <p>ER Mailer helps you send professional email campaigns with ease. Reach your audience effectively with our advanced email blasting solution.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="#download" class="btn">Download Now</a>
+                <a href="#pricing" class="btn">Get Started</a>
                 <a href="#features" class="btn btn-outline">Learn More</a>
             </div>
         </div>
@@ -932,8 +954,8 @@
                         <strong>ZIP Password:</strong> 25052025
                     </div>
                     
-                    <div class="version-options">
-                        <h4>Previous Versions:</h4>
+                    <button class="toggle-versions" onclick="toggleVersions('password')">▼ Previous Versions</button>
+                    <div class="version-options" id="password-versions">
                         <div class="version-option">
                             <div class="version-option-details">
                                 <span class="version-option-name">Version 1.1</span>
@@ -975,8 +997,8 @@
                         <strong>ZIP Password:</strong> 25062025
                     </div>
                     
-                    <div class="version-options">
-                        <h4>Previous Versions:</h4>
+                    <button class="toggle-versions" onclick="toggleVersions('api')">▼ Previous Versions</button>
+                    <div class="version-options" id="api-versions">
                         <div class="version-option">
                             <div class="version-option-details">
                                 <span class="version-option-name">Version 5.1.2</span>
@@ -1252,6 +1274,20 @@
         document.getElementById('downloadApi').addEventListener('click', function() {
             triggerDownload(versions.api.current.file);
         });
+
+        // Toggle previous versions visibility
+        function toggleVersions(type) {
+            const versionsElement = document.getElementById(`${type}-versions`);
+            const button = event.target;
+            
+            versionsElement.classList.toggle('active');
+            
+            if (versionsElement.classList.contains('active')) {
+                button.textContent = '▲ Previous Versions';
+            } else {
+                button.textContent = '▼ Previous Versions';
+            }
+        }
 
         // Download old versions
         function downloadOldVersion(type, version) {
