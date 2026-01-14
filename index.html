@@ -964,15 +964,25 @@
                 </div>
                 <div class="version-card">
                     <h3 class="version-title">API Version</h3>
-                    <span class="version-number">(Current) Version 5.1.4</span>
-                    <div class="version-date">Released: October 8, 2025</div>
+                    <span class="version-number">(Current) Version 5.1.5</span>
+                    <div class="version-date">Released: Jan 15, 2026</div>
                     <button class="btn" id="downloadApi">Download Now</button>
                     <div class="password-info">
-                        <strong>ZIP Password:</strong> 08102025
+                        <strong>ZIP Password:</strong> 15012026
                     </div>
                     
                     <button class="toggle-versions" onclick="toggleVersions('api')">▼ Previous Versions</button>
                     <div class="version-options" id="api-versions">
+                        <div class="version-option">
+                            <div class="version-option-details">
+                                <span class="version-option-name">Version 5.1.4</span>
+                                <span class="version-option-date">October 8, 2025</span>
+                            </div>
+                            <div>
+                                <span class="version-option-password">Zip Pass: 08102025</span>
+                                <button class="download-old-btn" onclick="downloadOldVersion('api', '5.1.4')">Download</button>
+                            </div>
+                        </div>
                         <div class="version-option">
                             <div class="version-option-details">
                                 <span class="version-option-name">Version 5.1.3</span>
@@ -981,17 +991,6 @@
                             <div>
                                 <span class="version-option-password">Zip Pass: 25062025</span>
                                 <button class="download-old-btn" onclick="downloadOldVersion('api', '5.1.3')">Download</button>
-                            </div>
-                        </div>
-                     <div class="version-options" id="api-versions">
-                        <div class="version-option">
-                            <div class="version-option-details">
-                                <span class="version-option-name">Version 5.1.2</span>
-                                <span class="version-option-date">Apr 1, 2025</span>
-                            </div>
-                            <div>
-                                <span class="version-option-password">Zip Pass: 01042025</span>
-                                <button class="download-old-btn" onclick="downloadOldVersion('api', '5.1.2')">Download</button>
                             </div>
                         </div>
                     </div>
@@ -1187,23 +1186,23 @@
             },
             api: {
                 current: {
-                    version: "5.1.4",
-                    file: "https://drive.usercontent.google.com/download?id=1cFfLYWwCn3164fr2ne6qpS0gRoMYXHFR&export=download&authuser=0",
-                    password: "08102025",
-                    date: "October 8, 2025"
+                    version: "5.1.5",
+                    file: "https://drive.usercontent.google.com/download?id=1-SMNoCfcX9Q6VqkK_9Fd7fH14b1Lm27v&export=download&authuser=0",
+                    password: "15012026",
+                    date: "Jan 15, 2026"
                 },
                 old: [
+                    {
+                        version: "5.1.4",
+                        file: "https://drive.usercontent.google.com/download?id=1cFfLYWwCn3164fr2ne6qpS0gRoMYXHFR&export=download&authuser=0",
+                        password: "08102025",
+                        date: "October 8, 2025"
+                    },
                     {
                         version: "5.1.3",
                         file: "https://drive.usercontent.google.com/download?id=10_xbRwzwB-XPR6FY4AwaabFCElWHc6P5&export=download&authuser=0",
                         password: "25062025",
                         date: "June 25, 2025"
-                    },
-                    {
-                        version: "5.1.2",
-                        file: "https://drive.usercontent.google.com/download?id=1upDujf3YwPJTkIN2Zb1ESsp6RlQc0kVH&export=download&authuser=0",
-                        password: "10052025",
-                        date: "June 21, 2025"
                     }
                 ]
             }
